@@ -1,4 +1,4 @@
-import model.Student;
+﻿import model.Student;
 import model.University;
 import enums.StudyProfile;
 import util.JsonUtil;
@@ -6,8 +6,16 @@ import util.JsonUtil;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Набор демонстрационных сценариев для проверки сериализации и десериализации моделей в JSON.
+ */
 public class JsonTest {
     
+    /**
+     * Выполняет последовательность тестов по преобразованию объектов и коллекций в JSON и обратно.
+     *
+     * @param args аргументы командной строки (не используются)
+     */
     public static void main(String[] args) {
         System.out.println("=== JSON SERIALIZATION/DESERIALIZATION TEST ===");
         

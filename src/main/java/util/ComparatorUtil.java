@@ -1,16 +1,28 @@
-package util;
+﻿package util;
 
 import comparators.*;
 import enums.StudentComparatorType;
 import enums.UniversityComparatorType;
 
+/**
+ * Утилита фабричных методов для получения готовых компараторов студентов и университетов.
+ */
 public class ComparatorUtil {
     
-    // Private constructor to prevent instantiation
+    /**
+     * Прячет конструктор и запрещает создавать экземпляры утилитного класса.
+     */
     private ComparatorUtil() {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
     
+    /**
+     * Возвращает компаратор студентов, соответствующий указанному типу сортировки.
+     *
+     * @param type требуемый тип сравнения студентов
+     * @return реализация {@link StudentComparator}
+     * @throws IllegalArgumentException если тип компаратора не поддерживается
+     */
     public static StudentComparator getStudentComparator(StudentComparatorType type) {
         switch (type) {
             case FULL_NAME:
@@ -26,6 +38,13 @@ public class ComparatorUtil {
         }
     }
     
+    /**
+     * Возвращает компаратор университетов для указанного способа сортировки.
+     *
+     * @param type требуемый тип сравнения университетов
+     * @return реализация {@link UniversityComparator}
+     * @throws IllegalArgumentException если тип компаратора не поддерживается
+     */
     public static UniversityComparator getUniversityComparator(UniversityComparatorType type) {
         switch (type) {
             case ID:
