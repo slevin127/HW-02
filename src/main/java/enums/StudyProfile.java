@@ -1,15 +1,15 @@
-﻿package enums;
+package enums;
 
 /**
  * Перечисление профилей обучения, используемых в системе для агрегирования статистики.
  */
 public enum StudyProfile {
-    PHYSICS("���������"),
-    COMPUTER_SCIENCE("�?�?�"�?�?�?���'����"),
-    MATHEMATICS("�?���'��?���'����"),
-    JURISPRUDENCE("�R�?��?���?�?�?��?�Ő�?"),
-    MEDICINE("�?��?��Ő�?��"),
-    LINGUISTICS("�>��?�?�?��?�'����");
+    PHYSICS("Физика"),
+    COMPUTER_SCIENCE("Информатика"),
+    MATHEMATICS("Математика"),
+    JURISPRUDENCE("Юриспруденция"),
+    MEDICINE("Медицина"),
+    LINGUISTICS("Лингвистика");
 
     private final String profileName;
 

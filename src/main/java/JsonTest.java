@@ -1,4 +1,4 @@
-﻿import model.Student;
+import model.Student;
 import model.University;
 import enums.StudyProfile;
 import util.JsonUtil;

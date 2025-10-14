@@ -1,4 +1,4 @@
-﻿package util;
+package util;
 
 import enums.StudyProfile;
 import model.Statistics;
@@ -16,12 +16,16 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.OptionalDouble;
 import java.util.stream.Collectors;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 /**
  * Набор утилит для построения агрегированной статистики по студентам и университетам.
  * Обрабатывает исходные коллекции и формирует объекты {@link Statistics} с использованием Stream API.
  */
 public final class StatisticsUtil {
+
+    private static final Logger logger = Logger.getLogger(StatisticsUtil.class.getName());
 
     /**
      * Прячет конструктор утилитного класса и предотвращает создание экземпляров.
@@ -43,9 +47,15 @@ public final class StatisticsUtil {
      * @return список статистик, упорядоченный согласно порядку появления профилей в исходной коллекции университетов
      */
     public static List<Statistics> calculateStatistics(List<Student> students, List<University> universities) {
+        logger.info("Starting statistics calculation");
+        
         if (universities == null || universities.isEmpty()) {
+            logger.warning("Universities list is null or empty, returning empty statistics");
             return Collections.emptyList();
         }
+
+        logger.info("Processing " + universities.size() + " universities and " + 
+                   (students == null ? 0 : students.size()) + " students");
 
         Map<StudyProfile, List<University>> universitiesByProfile = universities.stream()
                 .filter(Objects::nonNull)
@@ -56,8 +66,11 @@ public final class StatisticsUtil {
                         Collectors.toCollection(ArrayList::new)));
 
         if (universitiesByProfile.isEmpty()) {
+            logger.warning("No universities with valid profiles found, returning empty statistics");
             return Collections.emptyList();
         }
+
+        logger.info("Found universities for " + universitiesByProfile.size() + " study profiles");
 
         Map<String, List<Student>> studentsByUniversity = students == null
                 ? Collections.emptyMap()
@@ -66,9 +79,12 @@ public final class StatisticsUtil {
                 .filter(student -> student.getUniversityId() != null)
                 .collect(Collectors.groupingBy(Student::getUniversityId));
 
-        return universitiesByProfile.entrySet().stream()
+        List<Statistics> result = universitiesByProfile.entrySet().stream()
                 .map(entry -> buildStatistics(entry.getKey(), entry.getValue(), studentsByUniversity))
                 .collect(Collectors.toList());
+
+        logger.info("Successfully calculated statistics for " + result.size() + " study profiles");
+        return result;
     }
 
     /**

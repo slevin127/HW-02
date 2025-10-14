@@ -1,4 +1,4 @@
-﻿package io;
+package io;
 
 import model.Statistics;
 import org.apache.poi.ss.usermodel.Cell;
@@ -17,14 +17,18 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 /**
  * Утилита генерации XLSX-отчёта со статистикой по профилям обучения.
  */
-public final class XlsWriter {
+public  class XlsWriter {
 
-    private static final String SHEET_NAME = "Statistics";
-    private static final String[] HEADERS = {
+    private static final Logger logger = Logger.getLogger(XlsWriter.class.getName());
+
+    private static  String SHEET_NAME = "Statistics";
+    private static  String[] HEADERS = {
             "Study Profile",
             "Average Exam Score",
             "Student Count",
@@ -47,25 +51,38 @@ public final class XlsWriter {
      * @throws IOException если не удаётся создать файл или записать данные
      */
     public static void writeStatistics(List<Statistics> statistics, String filePath) throws IOException {
+        logger.info("Starting to write statistics report to file: " + filePath);
+        
         List<Statistics> safeStatistics = statistics == null
                 ? Collections.emptyList()
                 : statistics.stream().filter(Objects::nonNull).collect(Collectors.toList());
 
-        Path path = Path.of(filePath);
-        Path parent = path.getParent();
-        if (parent != null && !Files.exists(parent)) {
-            Files.createDirectories(parent);
-        }
+        logger.info("Writing " + safeStatistics.size() + " statistics records to Excel file");
 
-        try (XSSFWorkbook workbook = new XSSFWorkbook()) {
-            XSSFSheet sheet = workbook.createSheet(SHEET_NAME);
-            createHeaderRow(sheet);
-            populateDataRows(sheet, safeStatistics);
-            autosizeColumns(sheet);
-
-            try (FileOutputStream outputStream = new FileOutputStream(path.toFile())) {
-                workbook.write(outputStream);
+        try {
+            Path path = Path.of(filePath);
+            Path parent = path.getParent();
+            if (parent != null && !Files.exists(parent)) {
+                Files.createDirectories(parent);
+                logger.info("Created directory structure: " + parent);
             }
+
+            try (XSSFWorkbook workbook = new XSSFWorkbook()) {
+                XSSFSheet sheet = workbook.createSheet(SHEET_NAME);
+                createHeaderRow(sheet);
+                populateDataRows(sheet, safeStatistics);
+                autosizeColumns(sheet);
+
+                try (FileOutputStream outputStream = new FileOutputStream(path.toFile())) {
+                    workbook.write(outputStream);
+                }
+            }
+            
+            logger.info("Successfully wrote statistics report to file: " + filePath);
+            
+        } catch (IOException e) {
+            logger.severe("IOException occurred while writing statistics file: " + e.getMessage());
+            throw e;
         }
     }
 

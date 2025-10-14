@@ -1,4 +1,4 @@
-﻿import io.XlsReader;
+import io.XlsReader;
 import io.XlsWriter;
 import model.Statistics;
 import model.Student;
@@ -8,16 +8,21 @@ import comparators.UniversityComparator;
 import enums.StudentComparatorType;
 import enums.UniversityComparatorType;
 import util.ComparatorUtil;
-import util.JsonUtil;
 import util.StatisticsUtil;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
+import java.util.logging.Logger;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
 
 /**
  * Точка входа демонстрационного приложения: считывает данные, строит статистику, выводит информацию и формирует отчёт.
  */
 public class Boot {
+
+    private static final Logger logger = Logger.getLogger(Boot.class.getName());
 
     /**
      * Запускает обработку данных: читает XLSX, сортирует коллекции, строит статистику и сохраняет отчёт.
@@ -26,76 +31,50 @@ public class Boot {
      * @throws IOException если чтение исходных файлов или запись отчёта завершается ошибкой
      */
     public static void main(String[] args) throws IOException {
+        
+        // Configure logging from properties file
+        try (InputStream configFile = Boot.class.getClassLoader().getResourceAsStream("logging.properties")) {
+            if (configFile != null) {
+                LogManager.getLogManager().readConfiguration(configFile);
+            }
+        } catch (Exception e) {
+            System.err.println("Could not load logging configuration: " + e.getMessage());
+        }
+
+        logger.info("Starting application data processing");
 
         List<University> universities =
                 XlsReader.readXlsUniversities("src/main/resources/universityInfo.xlsx");
+        logger.info("Successfully loaded " + universities.size() + " universities from file");
 
         // Получаем компаратор университетов по полному названию
         UniversityComparator universityComparator = ComparatorUtil.getUniversityComparator(UniversityComparatorType.FULL_NAME);
 
-        System.out.println("Universities sorted by full name:");
+        logger.info("Universities sorted by full name:");
         universities.stream()
                 .sorted(universityComparator)
-                .forEach(System.out::println);
+                .forEach(university -> logger.info(university.toString()));
 
         List<Student> students =
                 XlsReader.readXlsStudents("src/main/resources/universityInfo.xlsx");
+        logger.info("Successfully loaded " + students.size() + " students from file");
 
         // Получаем компаратор студентов по среднему баллу
         StudentComparator studentComparator = ComparatorUtil.getStudentComparator(StudentComparatorType.AVG_EXAM_SCORE);
 
-        System.out.println("\nStudents sorted by average exam score (descending):");
+        logger.info("Students sorted by average exam score (descending):");
         students.stream()
                 .sorted(studentComparator)
-                .forEach(System.out::println);
+                .forEach(student -> logger.info(student.toString()));
 
         // Статистика по профилям обучения
-        System.out.println("\n=== STUDY PROFILE STATISTICS ===");
+        logger.info("=== STUDY PROFILE STATISTICS ===");
         List<Statistics> statistics = StatisticsUtil.calculateStatistics(students, universities);
-        statistics.forEach(System.out::println);
+        logger.info("Calculated statistics for " + statistics.size() + " study profiles");
+        statistics.forEach(stat -> logger.info(stat.toString()));
 
         String reportPath = "target/statistics-report.xlsx";
         XlsWriter.writeStatistics(statistics, reportPath);
-        System.out.println("Statistics report generated: " + reportPath);
-
-        System.out.println("\n=== JSON SERIALIZATION/DESERIALIZATION DEMO ===");
-
-        System.out.println("\n--- Serializing Universities Collection ---");
-        String universitiesJson = JsonUtil.serializeUniversityList(universities);
-        System.out.println(universitiesJson);
-
-        System.out.println("\n--- Serializing Students Collection ---");
-        String studentsJson = JsonUtil.serializeStudentList(students);
-        System.out.println(studentsJson);
-
-        System.out.println("\n--- Deserializing Collections ---");
-        List<University> deserializedUniversities = JsonUtil.deserializeUniversityList(universitiesJson);
-        List<Student> deserializedStudents = JsonUtil.deserializeStudentList(studentsJson);
-
-        System.out.println("Original universities count: " + universities.size());
-        System.out.println("Deserialized universities count: " + deserializedUniversities.size());
-        System.out.println("Universities deserialization correct: " + (universities.size() == deserializedUniversities.size()));
-
-        System.out.println("Original students count: " + students.size());
-        System.out.println("Deserialized students count: " + deserializedStudents.size());
-        System.out.println("Students deserialization correct: " + (students.size() == deserializedStudents.size()));
-
-        System.out.println("\n--- Stream API Individual Serialization/Deserialization ---");
-
-        System.out.println("\nUniversities individual processing:");
-        universities.stream()
-                .limit(3)
-                .map(JsonUtil::serializeUniversity)
-                .peek(json -> System.out.println("Serialized: " + json))
-                .map(JsonUtil::deserializeUniversity)
-                .forEach(university -> System.out.println("Deserialized: " + university));
-
-        System.out.println("\nStudents individual processing:");
-        students.stream()
-                .limit(3)
-                .map(JsonUtil::serializeStudent)
-                .peek(json -> System.out.println("Serialized: " + json))
-                .map(JsonUtil::deserializeStudent)
-                .forEach(student -> System.out.println("Deserialized: " + student));
+        logger.info("Statistics report generated: " + reportPath);
     }
 }

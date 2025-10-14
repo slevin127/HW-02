@@ -1,4 +1,4 @@
-﻿package comparators;
+package comparators;
 
 import model.Student;
 import java.util.Comparator;
