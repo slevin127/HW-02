@@ -1,5 +1,8 @@
 import io.XlsReader;
 import io.XlsWriter;
+import io.XmlWriter;
+import io.JsonWriter;
+import model.Root;
 import model.Statistics;
 import model.Student;
 import model.University;
@@ -10,8 +13,10 @@ import enums.UniversityComparatorType;
 import util.ComparatorUtil;
 import util.StatisticsUtil;
 
+import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.logging.Level;
@@ -76,5 +81,33 @@ public class Boot {
         String reportPath = "target/statistics-report.xlsx";
         XlsWriter.writeStatistics(statistics, reportPath);
         logger.info("Statistics report generated: " + reportPath);
+
+        // Создаём корневой объект для XML и JSON экспорта
+        LocalDateTime processedAt = LocalDateTime.now();
+        Root rootData = new Root(students, universities, statistics, processedAt);
+        logger.info("Created root object for XML/JSON export with " + 
+                   students.size() + " students, " + 
+                   universities.size() + " universities, " + 
+                   statistics.size() + " statistics entries");
+
+        // Генерируем XML файл
+        try {
+            XmlWriter.writeXml(rootData);
+            logger.info("XML file generation completed successfully");
+        } catch (JAXBException e) {
+            logger.log(Level.SEVERE, "Failed to generate XML file: " + e.getMessage(), e);
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "Failed to write XML file to disk: " + e.getMessage(), e);
+        }
+
+        // Генерируем JSON файл
+        try {
+            JsonWriter.writeJson(rootData);
+            logger.info("JSON file generation completed successfully");
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "Failed to write JSON file to disk: " + e.getMessage(), e);
+        }
+
+        logger.info("Application processing completed successfully");
     }
 }

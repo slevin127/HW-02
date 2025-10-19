@@ -3,6 +3,9 @@ package model;
 import com.google.gson.annotations.SerializedName;
 import enums.StudyProfile;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,12 +13,15 @@ import java.util.List;
 /**
  * Модель агрегированной статистики по профилям обучения, рассчитанной на основе данных студентов и университетов.
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Statistics {
 
     @SerializedName("study_profile")
+    @XmlElement(name = "universityProfile")
     private StudyProfile studyProfile;
 
     @SerializedName("avg_exam_score")
+    @XmlElement(name = "avgScore")
     private BigDecimal avgExamScore;
 
     @SerializedName("student_count")

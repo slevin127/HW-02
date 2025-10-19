@@ -494,3 +494,707 @@
   <message>Statistics report generated: target/statistics-report.xlsx</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2025-10-19T08:59:09.881279Z</date>
+  <millis>1760864349881</millis>
+  <nanos>279000</nanos>
+  <sequence>0</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Starting application data processing</message>
+</record>
+<record>
+  <date>2025-10-19T08:59:09.967894200Z</date>
+  <millis>1760864349967</millis>
+  <nanos>894200</nanos>
+  <sequence>1</sequence>
+  <logger>io.XlsReader</logger>
+  <level>INFO</level>
+  <class>io.XlsReader</class>
+  <method>readXlsUniversities</method>
+  <thread>1</thread>
+  <message>Starting to read universities from file: src/main/resources/universityInfo.xlsx</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2025-10-19T09:00:01.452167800Z</date>
+  <millis>1760864401452</millis>
+  <nanos>167800</nanos>
+  <sequence>0</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Starting application data processing</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:01.500170300Z</date>
+  <millis>1760864401500</millis>
+  <nanos>170300</nanos>
+  <sequence>3</sequence>
+  <logger>io.XlsReader</logger>
+  <level>INFO</level>
+  <class>io.XlsReader</class>
+  <method>readXlsUniversities</method>
+  <thread>1</thread>
+  <message>Starting to read universities from file: src/main/resources/universityInfo.xlsx</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.474168900Z</date>
+  <millis>1760864402474</millis>
+  <nanos>168900</nanos>
+  <sequence>319</sequence>
+  <logger>io.XlsReader</logger>
+  <level>INFO</level>
+  <class>io.XlsReader</class>
+  <method>readXlsUniversities</method>
+  <thread>1</thread>
+  <message>Successfully read 7 universities from file</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.475169500Z</date>
+  <millis>1760864402475</millis>
+  <nanos>169500</nanos>
+  <sequence>320</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Successfully loaded 7 universities from file</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.478167800Z</date>
+  <millis>1760864402478</millis>
+  <nanos>167800</nanos>
+  <sequence>321</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Universities sorted by full name:</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.488168400Z</date>
+  <millis>1760864402488</millis>
+  <nanos>168400</nanos>
+  <sequence>322</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$0</method>
+  <thread>1</thread>
+  <message>id = 0006-high, fullName = Воронежский Литературно-Переводческий Университет, shortName = ВЛПУ, yearOfFoundation = 2003, mainProfile = Лингвистика</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.490169Z</date>
+  <millis>1760864402490</millis>
+  <nanos>169000</nanos>
+  <sequence>323</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$0</method>
+  <thread>1</thread>
+  <message>id = 0007-high, fullName = Казанский Университет Вычислений, shortName = КУВ, yearOfFoundation = 1989, mainProfile = Математика</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.491167500Z</date>
+  <millis>1760864402491</millis>
+  <nanos>167500</nanos>
+  <sequence>324</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$0</method>
+  <thread>1</thread>
+  <message>id = 0001-high, fullName = Московский Выдуманный Университет, shortName = МВУ, yearOfFoundation = 1990, mainProfile = Физика</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.491167500Z</date>
+  <millis>1760864402491</millis>
+  <nanos>167500</nanos>
+  <sequence>325</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$0</method>
+  <thread>1</thread>
+  <message>id = 0003-high, fullName = Московский Государственный Медицинский Университет, shortName = МГМУ, yearOfFoundation = 1960, mainProfile = Медицина</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.492167800Z</date>
+  <millis>1760864402492</millis>
+  <nanos>167800</nanos>
+  <sequence>326</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$0</method>
+  <thread>1</thread>
+  <message>id = 0002-high, fullName = Московский Придуманный Институт, shortName = МПИ, yearOfFoundation = 1987, mainProfile = Физика</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.493168100Z</date>
+  <millis>1760864402493</millis>
+  <nanos>168100</nanos>
+  <sequence>327</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$0</method>
+  <thread>1</thread>
+  <message>id = 0005-high, fullName = Самарский Медицинский Институт, shortName = СМИ, yearOfFoundation = 1936, mainProfile = Медицина</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.493168100Z</date>
+  <millis>1760864402493</millis>
+  <nanos>168100</nanos>
+  <sequence>328</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$0</method>
+  <thread>1</thread>
+  <message>id = 0004-high, fullName = Тамбовский Университет Медицины, shortName = ТУМ, yearOfFoundation = 1995, mainProfile = Медицина</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.494168200Z</date>
+  <millis>1760864402494</millis>
+  <nanos>168200</nanos>
+  <sequence>329</sequence>
+  <logger>io.XlsReader</logger>
+  <level>INFO</level>
+  <class>io.XlsReader</class>
+  <method>readXlsStudents</method>
+  <thread>1</thread>
+  <message>Starting to read students from file: src/main/resources/universityInfo.xlsx</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.547166Z</date>
+  <millis>1760864402547</millis>
+  <nanos>166000</nanos>
+  <sequence>330</sequence>
+  <logger>io.XlsReader</logger>
+  <level>INFO</level>
+  <class>io.XlsReader</class>
+  <method>readXlsStudents</method>
+  <thread>1</thread>
+  <message>Successfully read 11 students from file</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.548168100Z</date>
+  <millis>1760864402548</millis>
+  <nanos>168100</nanos>
+  <sequence>331</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Successfully loaded 11 students from file</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.549170800Z</date>
+  <millis>1760864402549</millis>
+  <nanos>170800</nanos>
+  <sequence>332</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Students sorted by average exam score (descending):</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.550169100Z</date>
+  <millis>1760864402550</millis>
+  <nanos>169100</nanos>
+  <sequence>333</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Петров П. А., universityId = 0001-high, currentCourseNumber = 1, avgExamScore = 5.0</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.551170Z</date>
+  <millis>1760864402551</millis>
+  <nanos>170000</nanos>
+  <sequence>334</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Алексеев С. В., universityId = 0001-high, currentCourseNumber = 1, avgExamScore = 5.0</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.552169800Z</date>
+  <millis>1760864402552</millis>
+  <nanos>169800</nanos>
+  <sequence>335</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Соколов В. В., universityId = 0004-high, currentCourseNumber = 1, avgExamScore = 4.8</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.552169800Z</date>
+  <millis>1760864402552</millis>
+  <nanos>169800</nanos>
+  <sequence>336</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Иванов А. Г., universityId = 0001-high, currentCourseNumber = 3, avgExamScore = 4.8</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.553167Z</date>
+  <millis>1760864402553</millis>
+  <nanos>167000</nanos>
+  <sequence>337</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Васильев В. П., universityId = 0001-high, currentCourseNumber = 4, avgExamScore = 4.7</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.553167Z</date>
+  <millis>1760864402553</millis>
+  <nanos>167000</nanos>
+  <sequence>338</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Козлов М. В., universityId = 0002-high, currentCourseNumber = 2, avgExamScore = 4.6</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.553167Z</date>
+  <millis>1760864402553</millis>
+  <nanos>167000</nanos>
+  <sequence>339</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Игнатьев М. М., universityId = 0003-high, currentCourseNumber = 4, avgExamScore = 4.3</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.554165800Z</date>
+  <millis>1760864402554</millis>
+  <nanos>165800</nanos>
+  <sequence>340</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Фёдоров А. И., universityId = 0002-high, currentCourseNumber = 3, avgExamScore = 4.2</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.554165800Z</date>
+  <millis>1760864402554</millis>
+  <nanos>165800</nanos>
+  <sequence>341</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Иванов И. А., universityId = 0002-high, currentCourseNumber = 2, avgExamScore = 4.0</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.554165800Z</date>
+  <millis>1760864402554</millis>
+  <nanos>165800</nanos>
+  <sequence>342</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Витальев В. А., universityId = 0001-high, currentCourseNumber = 2, avgExamScore = 4.0</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.555165600Z</date>
+  <millis>1760864402555</millis>
+  <nanos>165600</nanos>
+  <sequence>343</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$1</method>
+  <thread>1</thread>
+  <message>fullName = Сидоров Е. Г., universityId = 0004-high, currentCourseNumber = 2, avgExamScore = 3.9</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.555165600Z</date>
+  <millis>1760864402555</millis>
+  <nanos>165600</nanos>
+  <sequence>344</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>=== STUDY PROFILE STATISTICS ===</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.556171300Z</date>
+  <millis>1760864402556</millis>
+  <nanos>171300</nanos>
+  <sequence>345</sequence>
+  <logger>util.StatisticsUtil</logger>
+  <level>INFO</level>
+  <class>util.StatisticsUtil</class>
+  <method>calculateStatistics</method>
+  <thread>1</thread>
+  <message>Starting statistics calculation</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.557168200Z</date>
+  <millis>1760864402557</millis>
+  <nanos>168200</nanos>
+  <sequence>346</sequence>
+  <logger>util.StatisticsUtil</logger>
+  <level>INFO</level>
+  <class>util.StatisticsUtil</class>
+  <method>calculateStatistics</method>
+  <thread>1</thread>
+  <message>Processing 7 universities and 11 students</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.561169200Z</date>
+  <millis>1760864402561</millis>
+  <nanos>169200</nanos>
+  <sequence>347</sequence>
+  <logger>util.StatisticsUtil</logger>
+  <level>INFO</level>
+  <class>util.StatisticsUtil</class>
+  <method>calculateStatistics</method>
+  <thread>1</thread>
+  <message>Found universities for 4 study profiles</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.575172Z</date>
+  <millis>1760864402575</millis>
+  <nanos>172000</nanos>
+  <sequence>348</sequence>
+  <logger>util.StatisticsUtil</logger>
+  <level>INFO</level>
+  <class>util.StatisticsUtil</class>
+  <method>calculateStatistics</method>
+  <thread>1</thread>
+  <message>Successfully calculated statistics for 4 study profiles</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.576169400Z</date>
+  <millis>1760864402576</millis>
+  <nanos>169400</nanos>
+  <sequence>349</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Calculated statistics for 4 study profiles</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.577168700Z</date>
+  <millis>1760864402577</millis>
+  <nanos>168700</nanos>
+  <sequence>350</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$2</method>
+  <thread>1</thread>
+  <message>studyProfile = Физика, avgExamScore = 4.54, studentCount = 8, universityCount = 2, universityNames = [Московский Выдуманный Университет, Московский Придуманный Институт]</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.578170500Z</date>
+  <millis>1760864402578</millis>
+  <nanos>170500</nanos>
+  <sequence>351</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$2</method>
+  <thread>1</thread>
+  <message>studyProfile = Медицина, avgExamScore = 4.33, studentCount = 3, universityCount = 3, universityNames = [Московский Государственный Медицинский Университет, Тамбовский Университет Медицины, Самарский Медицинский Институт]</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.579169Z</date>
+  <millis>1760864402579</millis>
+  <nanos>169000</nanos>
+  <sequence>352</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$2</method>
+  <thread>1</thread>
+  <message>studyProfile = Лингвистика, avgExamScore = null, studentCount = 0, universityCount = 1, universityNames = [Воронежский Литературно-Переводческий Университет]</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.580171600Z</date>
+  <millis>1760864402580</millis>
+  <nanos>171600</nanos>
+  <sequence>353</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>lambda$main$2</method>
+  <thread>1</thread>
+  <message>studyProfile = Математика, avgExamScore = null, studentCount = 0, universityCount = 1, universityNames = [Казанский Университет Вычислений]</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.581170700Z</date>
+  <millis>1760864402581</millis>
+  <nanos>170700</nanos>
+  <sequence>354</sequence>
+  <logger>io.XlsWriter</logger>
+  <level>INFO</level>
+  <class>io.XlsWriter</class>
+  <method>writeStatistics</method>
+  <thread>1</thread>
+  <message>Starting to write statistics report to file: target/statistics-report.xlsx</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:02.583168Z</date>
+  <millis>1760864402583</millis>
+  <nanos>168000</nanos>
+  <sequence>355</sequence>
+  <logger>io.XlsWriter</logger>
+  <level>INFO</level>
+  <class>io.XlsWriter</class>
+  <method>writeStatistics</method>
+  <thread>1</thread>
+  <message>Writing 4 statistics records to Excel file</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.123168Z</date>
+  <millis>1760864403123</millis>
+  <nanos>168000</nanos>
+  <sequence>465</sequence>
+  <logger>io.XlsWriter</logger>
+  <level>INFO</level>
+  <class>io.XlsWriter</class>
+  <method>writeStatistics</method>
+  <thread>1</thread>
+  <message>Successfully wrote statistics report to file: target/statistics-report.xlsx</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.124168Z</date>
+  <millis>1760864403124</millis>
+  <nanos>168000</nanos>
+  <sequence>466</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Statistics report generated: target/statistics-report.xlsx</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.127166400Z</date>
+  <millis>1760864403127</millis>
+  <nanos>166400</nanos>
+  <sequence>467</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Created root object for XML/JSON export with 11 students, 7 universities, 4 statistics entries</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.129171800Z</date>
+  <millis>1760864403129</millis>
+  <nanos>171800</nanos>
+  <sequence>468</sequence>
+  <logger>io.XmlWriter</logger>
+  <level>INFO</level>
+  <class>io.XmlWriter</class>
+  <method>writeXml</method>
+  <thread>1</thread>
+  <message>Starting XML marshalling process</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.129171800Z</date>
+  <millis>1760864403129</millis>
+  <nanos>171800</nanos>
+  <sequence>469</sequence>
+  <logger>io.XmlWriter</logger>
+  <level>INFO</level>
+  <class>io.XmlWriter</class>
+  <method>writeXml</method>
+  <thread>1</thread>
+  <message>Created output directory: xmlReqs</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.130171Z</date>
+  <millis>1760864403130</millis>
+  <nanos>171000</nanos>
+  <sequence>470</sequence>
+  <logger>io.XmlWriter</logger>
+  <level>INFO</level>
+  <class>io.XmlWriter</class>
+  <method>writeXml</method>
+  <thread>1</thread>
+  <message>Writing XML to file: C:\Users\Alexandr\IdeaProjects\HW-02\xmlReqs\req_2025-10-19_16-00-03.xml</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.306166300Z</date>
+  <millis>1760864403306</millis>
+  <nanos>166300</nanos>
+  <sequence>514</sequence>
+  <logger>io.XmlWriter</logger>
+  <level>INFO</level>
+  <class>io.XmlWriter</class>
+  <method>writeXml</method>
+  <thread>1</thread>
+  <message>Successfully wrote XML file: C:\Users\Alexandr\IdeaProjects\HW-02\xmlReqs\req_2025-10-19_16-00-03.xml</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.306166300Z</date>
+  <millis>1760864403306</millis>
+  <nanos>166300</nanos>
+  <sequence>515</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>XML file generation completed successfully</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.355167700Z</date>
+  <millis>1760864403355</millis>
+  <nanos>167700</nanos>
+  <sequence>516</sequence>
+  <logger>io.JsonWriter</logger>
+  <level>INFO</level>
+  <class>io.JsonWriter</class>
+  <method>writeJson</method>
+  <thread>1</thread>
+  <message>Starting JSON serialization process</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.356168200Z</date>
+  <millis>1760864403356</millis>
+  <nanos>168200</nanos>
+  <sequence>517</sequence>
+  <logger>io.JsonWriter</logger>
+  <level>INFO</level>
+  <class>io.JsonWriter</class>
+  <method>writeJson</method>
+  <thread>1</thread>
+  <message>Created output directory: jsonReqs</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.356168200Z</date>
+  <millis>1760864403356</millis>
+  <nanos>168200</nanos>
+  <sequence>518</sequence>
+  <logger>io.JsonWriter</logger>
+  <level>INFO</level>
+  <class>io.JsonWriter</class>
+  <method>writeJson</method>
+  <thread>1</thread>
+  <message>Writing JSON to file: C:\Users\Alexandr\IdeaProjects\HW-02\jsonReqs\req_2025-10-19_16-00-03.json</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.357168100Z</date>
+  <millis>1760864403357</millis>
+  <nanos>168100</nanos>
+  <sequence>519</sequence>
+  <logger>io.JsonWriter</logger>
+  <level>INFO</level>
+  <class>io.JsonWriter</class>
+  <method>writeJson</method>
+  <thread>1</thread>
+  <message>Added 11 students to JSON</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.357168100Z</date>
+  <millis>1760864403357</millis>
+  <nanos>168100</nanos>
+  <sequence>520</sequence>
+  <logger>io.JsonWriter</logger>
+  <level>INFO</level>
+  <class>io.JsonWriter</class>
+  <method>writeJson</method>
+  <thread>1</thread>
+  <message>Added 7 universities to JSON</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.357168100Z</date>
+  <millis>1760864403357</millis>
+  <nanos>168100</nanos>
+  <sequence>521</sequence>
+  <logger>io.JsonWriter</logger>
+  <level>INFO</level>
+  <class>io.JsonWriter</class>
+  <method>writeJson</method>
+  <thread>1</thread>
+  <message>Added 4 statistics entries to JSON</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.368171300Z</date>
+  <millis>1760864403368</millis>
+  <nanos>171300</nanos>
+  <sequence>522</sequence>
+  <logger>io.JsonWriter</logger>
+  <level>INFO</level>
+  <class>io.JsonWriter</class>
+  <method>writeJson</method>
+  <thread>1</thread>
+  <message>Successfully wrote JSON file: C:\Users\Alexandr\IdeaProjects\HW-02\jsonReqs\req_2025-10-19_16-00-03.json</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.368171300Z</date>
+  <millis>1760864403368</millis>
+  <nanos>171300</nanos>
+  <sequence>523</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>JSON file generation completed successfully</message>
+</record>
+<record>
+  <date>2025-10-19T09:00:03.369168100Z</date>
+  <millis>1760864403369</millis>
+  <nanos>168100</nanos>
+  <sequence>524</sequence>
+  <logger>Boot</logger>
+  <level>INFO</level>
+  <class>Boot</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Application processing completed successfully</message>
+</record>
+</log>

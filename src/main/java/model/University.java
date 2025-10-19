@@ -3,15 +3,22 @@ package model;
 import com.google.gson.annotations.SerializedName;
 import enums.StudyProfile;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  * Модель университета с ключевыми атрибутами и основным профилем обучения.
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class University {
 
     @SerializedName("university_id")
+    @XmlElement(name = "universityId")
     private String id;
 
     @SerializedName("full_university_name")
+    @XmlElement(name = "universityName")
     private String fullName;
 
     @SerializedName("abbreviated_name")
@@ -21,6 +28,7 @@ public class University {
     private int yearOfFoundation;
 
     @SerializedName("primary_study_profile")
+    @XmlElement(name = "universityProfile")
     private StudyProfile mainProfile;
 
     /**

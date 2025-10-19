@@ -2,21 +2,29 @@ package model;
 
 import com.google.gson.annotations.SerializedName;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  * Модель студента с основными данными, используемыми при агрегации и сериализации.
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Student {
 
     @SerializedName("student_name")
+    @XmlElement(name = "studentName")
     private String fullName;
 
-    @SerializedName("university_identifier")
+    @SerializedName("universityId")
+    @XmlElement(name = "universityId")
     private String universityId;
 
     @SerializedName("course_year")
     private int currentCourseNumber;
 
     @SerializedName("average_score")
+    @XmlElement(name = "avgScore")
     private float avgExamScore;
 
     /**
